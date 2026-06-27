@@ -16,24 +16,20 @@
 }
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;min-height:100vh;}
 
-/* SYNC BADGE */
 .sync-badge{position:fixed;bottom:16px;right:16px;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;z-index:200;transition:all .3s;}
 .sync-badge.syncing{background:#FDF3DC;color:var(--amber);border:1px solid #F5D78E;}
 .sync-badge.saved{background:#E8F4EC;color:var(--green);border:1px solid #BEE0CA;}
 .sync-badge.error{background:#FDEAEA;color:var(--red);border:1px solid #F0BABA;}
 .sync-badge.hidden{opacity:0;pointer-events:none;}
 
-/* HEADER */
 header{background:var(--text);padding:1.75rem 2rem;}
 .h-inner{max-width:1100px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .h-eye{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
 header h1{font-size:22px;font-weight:600;color:#fff;}
 header p{font-size:12px;color:#A8A69E;margin-top:3px;}
-.h-budget{text-align:right;}
 .h-budget .label{font-size:11px;color:#A8A69E;text-transform:uppercase;letter-spacing:.06em;}
-.h-budget .val{font-size:20px;font-weight:600;color:#fff;}
+.h-budget .val{font-size:20px;font-weight:600;color:#fff;text-align:right;}
 
-/* STICKY BAR */
 .sbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 2rem;position:sticky;top:0;z-index:20;}
 .sbar-inner{max-width:1100px;margin:0 auto;}
 .sbar-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;}
@@ -41,43 +37,38 @@ header p{font-size:12px;color:#A8A69E;margin-top:3px;}
 .bar-fill{height:100%;border-radius:20px;transition:width .4s,background .4s;}
 .sbar-status{font-size:12px;color:var(--sec);margin-top:4px;}
 
-/* TABS */
-.tabs{max-width:1100px;margin:1.5rem auto 0;padding:0 2rem;display:flex;gap:4px;}
-.tab{padding:7px 18px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;color:var(--sec);transition:all .15s;}
+.tabs{max-width:1100px;margin:1.5rem auto 0;padding:0 2rem;display:flex;gap:4px;overflow-x:auto;}
+.tab{padding:7px 16px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;color:var(--sec);white-space:nowrap;transition:all .15s;}
 .tab.active{background:var(--text);color:#fff;border-color:var(--text);}
 
-/* MAIN */
 main{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 3rem;}
 .panel{display:none;}.panel.active{display:block;}
 
-/* KPI CARDS */
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:1.75rem;}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:1.75rem;}
 .kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;}
 .kpi-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:5px;}
-.kpi-val{font-size:22px;font-weight:600;}
+.kpi-val{font-size:20px;font-weight:600;}
 .kpi-sub{font-size:11px;color:var(--muted);margin-top:3px;}
 
-/* CHARTS */
 .charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1.75rem;}
 .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;}
 .chart-title{font-size:13px;font-weight:500;color:var(--sec);margin-bottom:1rem;}
 .chart-wrap{position:relative;height:220px;}
-@media(max-width:650px){.charts-row{grid-template-columns:1fr;}}
 .dev-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:12px;}
 .dev-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px;}
 
-/* BUTTONS */
 .btn{padding:7px 16px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);font-size:13px;font-family:inherit;color:var(--text);cursor:pointer;font-weight:500;transition:background .15s;}
 .btn:hover{background:var(--surface2);}
 .btn.primary{background:var(--text);color:#fff;border-color:var(--text);}
 .btn.primary:hover{background:#333;}
 .btn.danger{border-color:#F0BABA;color:var(--red);}
 .btn.danger:hover{background:#FDF0F0;}
-.btn.sm{padding:4px 10px;font-size:12px;}
+.btn.sm{padding:5px 12px;font-size:12px;}
 
-/* TABLE */
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;}
 .section-head h2{font-size:15px;font-weight:600;}
+
+/* DESKTOP TABLE */
 .tbl-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;}
 table{width:100%;border-collapse:collapse;}
 thead th{padding:9px 12px;font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;background:var(--surface2);border-bottom:1px solid var(--border);text-align:left;}
@@ -92,22 +83,32 @@ input[type=number]{text-align:right;}
 input:focus{outline:none;border-color:var(--blue);background:#fff;}
 input::placeholder{color:var(--muted);}
 
-/* MO */
+/* MOBILE CARDS for presupuesto */
+.item-cards{display:none;margin-bottom:1.5rem;}
+.item-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px;}
+.item-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.item-card-name{font-weight:600;font-size:14px;}
+.item-card-unit{font-size:12px;color:var(--muted);margin-top:1px;}
+.item-card-actions{display:flex;gap:6px;flex-shrink:0;}
+.item-card-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.item-card-field label{display:block;font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;}
+.item-card-total{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:13px;}
+.item-card-total-val{font-weight:600;font-size:15px;}
+
 .mo-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#E8F4EC;border:1px solid #BEE0CA;border-radius:var(--r);padding:10px 14px;margin-bottom:1.5rem;}
-.mo-row label{font-size:13px;color:var(--green);font-weight:500;flex:1;min-width:160px;}
+.mo-row label{font-size:13px;color:var(--green);font-weight:500;flex:1;min-width:140px;}
 .mo-row input{width:80px;background:#fff;}
 .mo-rate{font-size:12px;color:var(--green);}
 .mo-total-lbl{font-size:15px;font-weight:600;color:var(--green);white-space:nowrap;}
 
-/* CHECKLIST */
-.cl-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;}
-.cl-filter{padding:5px 14px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--sec);transition:all .15s;}
+.cl-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;overflow-x:auto;}
+.cl-filter{padding:5px 14px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--sec);white-space:nowrap;}
 .cl-filter.active{background:var(--text);color:#fff;border-color:var(--text);}
 .cl-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;}
 .cl-item.bought{border-color:#BEE0CA;background:#F4FBF6;}
 .cl-item.extra{border-color:#F0BABA;background:#FDF6F6;}
-.cl-check{width:20px;height:20px;border-radius:5px;border:2px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;}
-.cl-check.done{background:var(--green);border-color:var(--green);color:#fff;}
+.cl-check{width:22px;height:22px;min-width:22px;border-radius:5px;border:2px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.cl-check.done{background:var(--green);border-color:var(--green);}
 .cl-info{flex:1;min-width:0;}
 .cl-name{font-weight:500;font-size:13px;}
 .cl-name.done{text-decoration:line-through;color:var(--muted);}
@@ -116,9 +117,8 @@ input::placeholder{color:var(--muted);}
 .badge-planned{background:#EBF2FB;color:var(--blue);}
 .badge-bought{background:#E8F4EC;color:var(--green);}
 .badge-extra{background:#FDEAEA;color:var(--red);}
-.cl-cost{font-size:13px;font-weight:600;text-align:right;white-space:nowrap;}
+.cl-cost{font-size:13px;font-weight:600;white-space:nowrap;}
 
-/* MODAL */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:center;justify-content:center;padding:1rem;}
 .overlay.open{display:flex;}
 .modal{background:var(--surface);border-radius:12px;padding:1.5rem;width:100%;max-width:460px;}
@@ -127,14 +127,18 @@ input::placeholder{color:var(--muted);}
 .form-row label{display:block;font-size:12px;font-weight:500;color:var(--sec);margin-bottom:4px;}
 .form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:1.25rem;}
 .actions-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.loading{text-align:center;padding:3rem;color:var(--muted);}
 
-/* LOADING */
-.loading{text-align:center;padding:3rem;color:var(--muted);font-size:14px;}
-
-@media(max-width:600px){
+/* RESPONSIVE */
+@media(max-width:650px){
   header,.sbar{padding:1rem;}
   main{padding:1rem 1rem 3rem;}
-  .tabs{padding:0 1rem;}
+  .tabs{padding:0 1rem;margin-top:1rem;}
+  .charts-row{grid-template-columns:1fr;}
+  /* hide desktop table, show cards */
+  .tbl-wrap{display:none;}
+  .item-cards{display:block;}
+  .kpi-val{font-size:18px;}
 }
 </style>
 </head>
@@ -147,7 +151,7 @@ input::placeholder{color:var(--muted);}
     <div>
       <div class="h-eye">Proyecto familiar</div>
       <h1>Presupuesto de construcción</h1>
-      <p>Datos sincronizados en la nube · accede desde cualquier dispositivo</p>
+      <p>Sincronizado en la nube · accede desde cualquier dispositivo</p>
     </div>
     <div class="h-budget">
       <div class="label">Presupuesto total</div>
@@ -170,7 +174,7 @@ input::placeholder{color:var(--muted);}
 <div class="tabs">
   <button class="tab active" onclick="switchTab('dashboard',this)">Dashboard</button>
   <button class="tab" onclick="switchTab('presupuesto',this)">Presupuesto</button>
-  <button class="tab" onclick="switchTab('checklist',this)">Checklist de compras</button>
+  <button class="tab" onclick="switchTab('checklist',this)">Checklist</button>
 </div>
 
 <main>
@@ -178,12 +182,12 @@ input::placeholder{color:var(--muted);}
 <!-- DASHBOARD -->
 <div class="panel active" id="panel-dashboard">
   <div class="kpis" style="margin-top:.5rem;">
-    <div class="kpi"><div class="kpi-label">Presupuestado materiales</div><div class="kpi-val" style="color:var(--blue)" id="kpi-mat">$0</div><div class="kpi-sub">según plan</div></div>
-    <div class="kpi"><div class="kpi-label">Gastado (comprado)</div><div class="kpi-val" style="color:var(--green)" id="kpi-comprado">$0</div><div class="kpi-sub" id="kpi-comprado-sub">0 de 0 ítems</div></div>
-    <div class="kpi"><div class="kpi-label">Extras no presupuestados</div><div class="kpi-val" style="color:var(--red)" id="kpi-extras">$0</div><div class="kpi-sub" id="kpi-extras-sub">0 ítems extra</div></div>
-    <div class="kpi"><div class="kpi-label">Mano de obra acumulada</div><div class="kpi-val" style="color:var(--green)" id="kpi-mo">$0</div><div class="kpi-sub" id="kpi-mo-sub">0 días</div></div>
-    <div class="kpi"><div class="kpi-label">Saldo restante</div><div class="kpi-val" id="kpi-saldo">$12.000.000</div><div class="kpi-sub">del presupuesto</div></div>
-    <div class="kpi"><div class="kpi-label">% compras completadas</div><div class="kpi-val" id="kpi-pct-items">0%</div><div class="kpi-sub">ítems marcados</div></div>
+    <div class="kpi"><div class="kpi-label">Presupuestado</div><div class="kpi-val" style="color:var(--blue)" id="kpi-mat">$0</div><div class="kpi-sub">materiales</div></div>
+    <div class="kpi"><div class="kpi-label">Gastado</div><div class="kpi-val" style="color:var(--green)" id="kpi-comprado">$0</div><div class="kpi-sub" id="kpi-comprado-sub">0 de 0 ítems</div></div>
+    <div class="kpi"><div class="kpi-label">Extras</div><div class="kpi-val" style="color:var(--red)" id="kpi-extras">$0</div><div class="kpi-sub" id="kpi-extras-sub">0 ítems</div></div>
+    <div class="kpi"><div class="kpi-label">Mano de obra</div><div class="kpi-val" style="color:var(--green)" id="kpi-mo">$0</div><div class="kpi-sub" id="kpi-mo-sub">0 días</div></div>
+    <div class="kpi"><div class="kpi-label">Saldo</div><div class="kpi-val" id="kpi-saldo">$12.000.000</div><div class="kpi-sub">restante</div></div>
+    <div class="kpi"><div class="kpi-label">Avance compras</div><div class="kpi-val" id="kpi-pct-items">0%</div><div class="kpi-sub">ítems comprados</div></div>
   </div>
   <div class="charts-row">
     <div class="chart-card">
@@ -191,7 +195,7 @@ input::placeholder{color:var(--muted);}
       <div class="chart-wrap"><canvas id="chart-donut"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Desviación: presupuestado vs. ejecutado</div>
+      <div class="chart-title">Presupuestado vs. ejecutado</div>
       <div class="chart-wrap"><canvas id="chart-bar"></canvas></div>
       <div class="dev-legend">
         <span><span class="dev-dot" style="background:#1A5FA8"></span>Presupuestado</span>
@@ -204,28 +208,34 @@ input::placeholder{color:var(--muted);}
 <!-- PRESUPUESTO -->
 <div class="panel" id="panel-presupuesto">
   <div class="mo-row" style="margin-top:.5rem;">
-    <label>🔨 Mano de obra — días trabajados</label>
+    <label>🔨 Mano de obra</label>
     <input type="number" id="mo-dias" min="0" step="1" placeholder="0" oninput="onMoChange()">
     <span class="mo-rate">días × $130.000</span>
     <span class="mo-total-lbl" id="mo-total">$0</span>
   </div>
   <div class="section-head">
     <h2>Ítems del presupuesto</h2>
-    <button class="btn primary" onclick="openModal()">+ Agregar ítem</button>
+    <button class="btn primary" onclick="openModal()">+ Agregar</button>
   </div>
+
+  <!-- Desktop table -->
   <div class="tbl-wrap">
     <table>
       <thead><tr>
         <th style="width:28%">Ítem</th><th style="width:7%">Und</th>
-        <th style="width:11%">Cant.</th><th style="width:16%">Vlr unit. mat.</th>
-        <th class="r" style="width:13%">Total mat.</th><th class="c" style="width:13%">Acciones</th>
+        <th style="width:11%">Cant.</th><th style="width:16%">Vlr unit.</th>
+        <th class="r" style="width:13%">Total</th><th class="c" style="width:15%">Acciones</th>
       </tr></thead>
       <tbody id="tbody-presupuesto"></tbody>
     </table>
   </div>
+
+  <!-- Mobile cards -->
+  <div class="item-cards" id="item-cards"></div>
+
   <div class="actions-row">
     <button class="btn primary" onclick="exportCSV()">⬇ Exportar CSV</button>
-    <button class="btn danger" onclick="clearAll()">✕ Limpiar valores</button>
+    <button class="btn danger" onclick="clearAll()">✕ Limpiar</button>
   </div>
 </div>
 
@@ -238,9 +248,9 @@ input::placeholder{color:var(--muted);}
       <button class="cl-filter" onclick="filterCL('comprado',this)">Comprados</button>
       <button class="cl-filter" onclick="filterCL('extra',this)">Extras</button>
     </div>
-    <button class="btn primary" onclick="openModalExtra()">+ Agregar extra</button>
+    <button class="btn primary" onclick="openModalExtra()">+ Extra</button>
   </div>
-  <div id="checklist-list"><div class="loading">Cargando datos...</div></div>
+  <div id="checklist-list"><div class="loading">Cargando...</div></div>
 </div>
 
 </main>
@@ -249,12 +259,12 @@ input::placeholder{color:var(--muted);}
 <div class="overlay" id="modal-overlay">
   <div class="modal">
     <h3 id="modal-title">Agregar ítem</h3>
-    <div class="form-row"><label>Nombre del ítem</label><input type="text" id="f-name" placeholder="Ej: Cemento"></div>
+    <div class="form-row"><label>Nombre</label><input type="text" id="f-name" placeholder="Ej: Cemento"></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div class="form-row"><label>Unidad</label><input type="text" id="f-unit" placeholder="und, m², bto..."></div>
+      <div class="form-row"><label>Unidad</label><input type="text" id="f-unit" placeholder="und, m²..."></div>
       <div class="form-row"><label>Cantidad</label><input type="number" id="f-qty" min="0" step="1" placeholder="0"></div>
     </div>
-    <div class="form-row"><label>Valor unitario material ($)</label><input type="number" id="f-mat" min="0" step="1000" placeholder="0"></div>
+    <div class="form-row"><label>Valor unitario ($)</label><input type="number" id="f-mat" min="0" step="1000" placeholder="0"></div>
     <input type="hidden" id="f-edit-idx" value="-1">
     <input type="hidden" id="f-mode" value="normal">
     <div class="form-actions">
@@ -264,10 +274,9 @@ input::placeholder{color:var(--muted);}
   </div>
 </div>
 
-<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBMblTPxxJtNBxkOPM62xy0JqSDCpSD-qY",
@@ -281,7 +290,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const DOC = doc(db, 'presupuesto', 'datos');
-
 const PRESUPUESTO = 12000000;
 const MO_DIA = 130000;
 
@@ -313,7 +321,6 @@ const DEFAULT_ITEMS = [
   {name:"Canaletas de desagüe",unit:"und",qty:0,mat:0,bought:false,extra:false,boughtCost:0},
 ];
 
-// UTILS
 function fmt(n){ return '$'+Math.round(n).toLocaleString('es-CO'); }
 function el(id){ return document.getElementById(id); }
 function clamp(v){ return Math.min(Math.max(v,0),100); }
@@ -325,42 +332,38 @@ function showSync(state,msg){
   if(state==='saved') setTimeout(()=>b.className='sync-badge hidden',2500);
 }
 
-// FIRESTORE
 async function saveToCloud(){
   showSync('syncing','⏳ Guardando...');
   try{
-    await setDoc(DOC,{items, moDias, updatedAt: new Date().toISOString()});
+    await setDoc(DOC,{items,moDias,updatedAt:new Date().toISOString()});
     showSync('saved','✓ Guardado en la nube');
   }catch(e){
     showSync('error','⚠ Error al guardar');
-    console.error(e);
   }
 }
 
 function scheduleSave(){
   clearTimeout(syncTimer);
-  syncTimer = setTimeout(saveToCloud, 1200);
+  syncTimer=setTimeout(saveToCloud,1200);
 }
 
-// Escucha cambios en tiempo real
-onSnapshot(DOC, (snap)=>{
+onSnapshot(DOC,(snap)=>{
   if(snap.exists()){
     const d=snap.data();
-    items = d.items || DEFAULT_ITEMS;
-    moDias = d.moDias || 0;
+    items=d.items||DEFAULT_ITEMS;
+    moDias=d.moDias||0;
   } else {
-    items = DEFAULT_ITEMS;
-    moDias = 0;
+    items=DEFAULT_ITEMS;
+    moDias=0;
   }
-  isLoading = false;
+  isLoading=false;
   const mid=el('mo-dias');
-  if(mid && document.activeElement!==mid) mid.value=moDias||'';
+  if(mid&&document.activeElement!==mid) mid.value=moDias||'';
   recalc();
   renderCharts();
 });
 
-// TABS
-window.switchTab = function(id,btn){
+window.switchTab=function(id,btn){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el('panel-'+id).classList.add('active');
@@ -368,7 +371,6 @@ window.switchTab = function(id,btn){
   if(id==='dashboard') renderCharts();
 };
 
-// TOTALS
 function totals(){
   const mat=items.filter(i=>!i.extra).reduce((s,i)=>s+(i.qty||0)*(i.mat||0),0);
   const comprado=items.filter(i=>i.bought&&!i.extra).reduce((s,i)=>s+(i.boughtCost||0),0);
@@ -380,21 +382,19 @@ function totals(){
   return {mat,comprado,extras,mo,grand,saldo,pct};
 }
 
+function setEl(id,v){const e=el(id);if(e)e.textContent=v;}
+
 function recalc(){
   const t=totals();
-  // bar
   const bar=el('bar');
   if(bar){bar.style.width=t.pct+'%';bar.style.background=t.pct>=100?'var(--red)':t.pct>=85?'#D4920A':'var(--blue)';}
   setEl('pct-text',Math.round(t.pct)+'% ejecutado');
   setEl('pct-nums',fmt(t.grand)+' de $12.000.000');
   const ss=el('sbar-status');
   if(ss){ss.textContent=t.saldo<0?'⚠ Superado por '+fmt(Math.abs(t.saldo)):t.pct>=85?'⚠ Solo quedan '+fmt(t.saldo):'Disponible: '+fmt(t.saldo);ss.style.color=t.saldo<0?'var(--red)':t.pct>=85?'var(--amber)':'var(--sec)';}
-  // mo
   setEl('mo-total',fmt(t.mo));
-  // kpis
-  const bought=items.filter(i=>i.bought);
   const planned=items.filter(i=>!i.extra);
-  const boughtPlanned=bought.filter(i=>!i.extra);
+  const boughtPlanned=items.filter(i=>i.bought&&!i.extra);
   const extraItems=items.filter(i=>i.extra&&i.bought);
   setEl('kpi-mat',fmt(t.mat));
   setEl('kpi-comprado',fmt(t.comprado));
@@ -411,46 +411,79 @@ function recalc(){
   renderChecklist();
 }
 
-function setEl(id,v){const e=el(id);if(e)e.textContent=v;}
-
-// PRESUPUESTO TABLE
-function renderPresupuesto(){
-  const tbody=el('tbody-presupuesto');
-  if(!tbody)return;
-  tbody.innerHTML=items.filter(i=>!i.extra).map((it,i)=>{
-    const tot=(it.qty||0)*(it.mat||0);
-    return `<tr>
-      <td class="name">${it.name}</td>
-      <td class="muted">${it.unit}</td>
-      <td><input type="number" min="0" step="1" value="${it.qty||''}" placeholder="0" onchange="setField(${i},'qty',this.value)"></td>
-      <td><input type="number" min="0" step="1000" value="${it.mat||''}" placeholder="0" onchange="setField(${i},'mat',this.value)"></td>
-      <td class="${tot===0?'zero':'total'} r">${tot===0?'—':fmt(tot)}</td>
-      <td class="c"><button class="btn sm" onclick="editItem(${i})" style="margin-right:4px">Editar</button><button class="btn sm danger" onclick="deleteItem(${i})">✕</button></td>
-    </tr>`;}).join('');
+function getRealIdx(visIdx){
+  const nonExtra=items.filter(i=>!i.extra);
+  return items.indexOf(nonExtra[visIdx]);
 }
 
-window.setField=function(i,f,v){
-  const realIdx=getRealIdx(i);
-  items[realIdx][f]=parseFloat(v)||0;
+function renderPresupuesto(){
+  const nonExtra=items.filter(i=>!i.extra);
+
+  // Desktop table
+  const tbody=el('tbody-presupuesto');
+  if(tbody){
+    tbody.innerHTML=nonExtra.map((it,vi)=>{
+      const tot=(it.qty||0)*(it.mat||0);
+      return `<tr>
+        <td class="name">${it.name}</td>
+        <td class="muted">${it.unit}</td>
+        <td><input type="number" min="0" step="1" value="${it.qty||''}" placeholder="0" onchange="setField(${vi},'qty',this.value)"></td>
+        <td><input type="number" min="0" step="1000" value="${it.mat||''}" placeholder="0" onchange="setField(${vi},'mat',this.value)"></td>
+        <td class="${tot===0?'zero':'total'} r">${tot===0?'—':fmt(tot)}</td>
+        <td class="c"><button class="btn sm" onclick="editItem(${vi})" style="margin-right:4px">Editar</button><button class="btn sm danger" onclick="deleteItem(getRealIdx(${vi}))">✕</button></td>
+      </tr>`;}).join('');
+  }
+
+  // Mobile cards
+  const cards=el('item-cards');
+  if(cards){
+    cards.innerHTML=nonExtra.map((it,vi)=>{
+      const tot=(it.qty||0)*(it.mat||0);
+      return `<div class="item-card">
+        <div class="item-card-header">
+          <div>
+            <div class="item-card-name">${it.name}</div>
+            <div class="item-card-unit">${it.unit}</div>
+          </div>
+          <div class="item-card-actions">
+            <button class="btn sm" onclick="editItem(${vi})">Editar</button>
+            <button class="btn sm danger" onclick="deleteItem(getRealIdx(${vi}))">✕</button>
+          </div>
+        </div>
+        <div class="item-card-fields">
+          <div class="item-card-field">
+            <label>Cantidad</label>
+            <input type="number" min="0" step="1" value="${it.qty||''}" placeholder="0" onchange="setField(${vi},'qty',this.value)">
+          </div>
+          <div class="item-card-field">
+            <label>Vlr unitario</label>
+            <input type="number" min="0" step="1000" value="${it.mat||''}" placeholder="0" onchange="setField(${vi},'mat',this.value)">
+          </div>
+        </div>
+        <div class="item-card-total">
+          <span style="color:var(--muted);font-size:12px;">Total material</span>
+          <span class="item-card-total-val" style="color:${tot===0?'var(--muted)':'var(--blue)'}">${tot===0?'—':fmt(tot)}</span>
+        </div>
+      </div>`;}).join('');
+  }
+}
+
+window.setField=function(vi,f,v){
+  const ri=getRealIdx(vi);
+  items[ri][f]=parseFloat(v)||0;
   recalc(); scheduleSave();
 };
-
-function getRealIdx(visIdx){
-  const nonExtra=items.filter(it=>!it.extra);
-  const item=nonExtra[visIdx];
-  return items.indexOf(item);
-}
+window.getRealIdx=getRealIdx;
 
 window.onMoChange=function(){
   moDias=parseFloat(el('mo-dias').value)||0;
   recalc(); scheduleSave();
 };
 
-// CHECKLIST
 function renderChecklist(){
   const cont=el('checklist-list');
   if(!cont)return;
-  if(isLoading){cont.innerHTML='<div class="loading">Cargando datos...</div>';return;}
+  if(isLoading){cont.innerHTML='<div class="loading">Cargando...</div>';return;}
   let list=items.filter(it=>{
     if(clFilter==='pendiente') return !it.bought;
     if(clFilter==='comprado') return it.bought&&!it.extra;
@@ -469,7 +502,7 @@ function renderChecklist(){
       </div>
       <div class="cl-info">
         <div class="cl-name ${it.bought?'done':''}">${it.name} ${badge}</div>
-        <div class="cl-detail">${it.qty?it.qty+' '+it.unit:'Sin cantidad'} · ${it.mat?'$'+Math.round(it.mat).toLocaleString('es-CO')+'/'+it.unit:'Sin precio'}</div>
+        <div class="cl-detail">${it.qty?it.qty+' '+it.unit:'Sin cantidad'} · ${it.mat?fmt(it.mat)+'/'+it.unit:'Sin precio'}</div>
       </div>
       <div class="cl-cost">${costShow}</div>
       ${it.extra?`<button class="btn sm danger" onclick="deleteItem(${idx})">✕</button>`:''}
@@ -490,24 +523,22 @@ window.filterCL=function(f,btn){
   renderChecklist();
 };
 
-// CHARTS
 function renderCharts(){
   const t=totals();
   const dCtx=el('chart-donut');
   if(!dCtx)return;
   if(donutChart)donutChart.destroy();
   donutChart=new Chart(dCtx,{type:'doughnut',data:{
-    labels:['Materiales comprados','Extras','Mano de obra','Disponible'],
+    labels:['Materiales','Extras','Mano de obra','Disponible'],
     datasets:[{data:[t.comprado,t.extras,t.mo,Math.max(t.saldo,0)],backgroundColor:['#1A5FA8','#9B2020','#2D6E3E','#E2E0D8'],borderWidth:0,hoverOffset:4}]
-  },options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:10,padding:10}}},maintainAspectRatio:false}});
+  },options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:10,padding:8}}},maintainAspectRatio:false}});
 
-  const withPrice=items.filter(i=>!i.extra&&(i.mat||0)>0).slice(0,8);
-  const labels=withPrice.map(i=>i.name.length>12?i.name.slice(0,12)+'…':i.name);
+  const withPrice=items.filter(i=>!i.extra&&(i.mat||0)>0).slice(0,7);
   const bCtx=el('chart-bar');
   if(!bCtx)return;
   if(barChart)barChart.destroy();
   barChart=new Chart(bCtx,{type:'bar',data:{
-    labels,
+    labels:withPrice.map(i=>i.name.length>10?i.name.slice(0,10)+'…':i.name),
     datasets:[
       {label:'Presupuestado',data:withPrice.map(i=>(i.qty||0)*(i.mat||0)),backgroundColor:'#1A5FA8cc',borderRadius:4},
       {label:'Comprado',data:withPrice.map(i=>i.bought?(i.boughtCost||0):0),backgroundColor:'#2D6E3Ecc',borderRadius:4},
@@ -515,7 +546,6 @@ function renderCharts(){
   },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10}}},y:{ticks:{callback:v=>'$'+Math.round(v/1000)+'k',font:{size:10}},grid:{color:'#E2E0D8'}}}}});
 }
 
-// MODAL
 window.openModal=function(idx=-1){
   el('modal-overlay').classList.add('open');
   el('modal-title').textContent=idx>=0?'Editar ítem':'Agregar ítem';
@@ -524,13 +554,13 @@ window.openModal=function(idx=-1){
   if(idx>=0){const it=items[idx];el('f-name').value=it.name;el('f-unit').value=it.unit;el('f-qty').value=it.qty||'';el('f-mat').value=it.mat||'';}
   else{el('f-name').value='';el('f-unit').value='';el('f-qty').value='';el('f-mat').value='';}
 };
-window.editItem=function(i){const realIdx=getRealIdx(i);openModal(realIdx);};
+window.editItem=function(vi){openModal(getRealIdx(vi));};
 window.closeModal=function(){el('modal-overlay').classList.remove('open');};
 el('modal-overlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
 
 window.openModalExtra=function(){
   el('modal-overlay').classList.add('open');
-  el('modal-title').textContent='Agregar ítem extra (no presupuestado)';
+  el('modal-title').textContent='Agregar ítem extra';
   el('f-edit-idx').value=-1;
   el('f-mode').value='extra';
   el('f-name').value='';el('f-unit').value='und';el('f-qty').value='1';el('f-mat').value='';
@@ -558,7 +588,6 @@ window.deleteItem=function(i){
   items.splice(i,1); recalc(); scheduleSave(); renderCharts();
 };
 
-// EXPORT
 window.exportCSV=function(){
   let rows=['\uFEFFÍtem,Unidad,Cantidad,Vlr unit Mat,Total Mat,Comprado,Costo real,Extra'];
   items.forEach(it=>rows.push(`"${it.name}","${it.unit}",${it.qty||0},${it.mat||0},${(it.qty||0)*(it.mat||0)},${it.bought?'Sí':'No'},${it.boughtCost||0},${it.extra?'Sí':'No'}`));
@@ -568,14 +597,13 @@ window.exportCSV=function(){
 };
 
 window.clearAll=function(){
-  if(!confirm('¿Limpiar todos los valores de precio y compras?'))return;
+  if(!confirm('¿Limpiar todos los valores?'))return;
   items.forEach(it=>{it.mat=0;it.bought=false;it.boughtCost=0;});
   items=items.filter(i=>!i.extra);
   moDias=0;
   const mid=el('mo-dias');if(mid)mid.value='';
   recalc(); saveToCloud(); renderCharts();
 };
-
 </script>
 </body>
 </html>
